@@ -17,8 +17,7 @@
       <h1 class="mb-3">Demo Request</h1>
       <button 
       hx-get="/users"
-      hx-trigger="click"
-      hx-swap="outerHTML"
+      hx-confirm="Do you want to proceed with fetching users list ?"
       hx-target="#usersList"
       type="button" class="btn btn-primary">Fetch Data</button>
       <div id="usersList"></div>
