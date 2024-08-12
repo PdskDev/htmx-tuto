@@ -17,9 +17,14 @@
       <h1 class="mb-3">Demo Request</h1>
       <button 
       hx-get="/users"
+      hx-vals='{"limit":3}'
+      hx-indicator="#loading"
       hx-confirm="Do you want to proceed with fetching users list ?"
       hx-target="#usersList"
       type="button" class="btn btn-primary">Fetch Data</button>
+      <div id="loading" class="htmx-indicator spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
       <div id="usersList"></div>
     </div>
     <script

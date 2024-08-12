@@ -11,12 +11,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/users", async (req, res) => {
-  const getUserFromApi = await fetch(
-    "https://jsonplaceholder.typicode.com/users"
-  );
-  const users = await getUserFromApi.json();
+  setTimeout(async () => {
+    const limit = +req.query.limit || 10;
 
-  res.status(200).send(`
+    console.log("query limit", limit);
+
+    const getUserFromApi = await fetch(
+      `https://jsonplaceholder.typicode.com/users?_limit=${limit}`
+    );
+    const users = await getUserFromApi.json();
+
+    res.status(200).send(`
     <h2>Users list</h2>
     <ul class="list-group">
         ${users
@@ -26,6 +31,7 @@ app.get("/users", async (req, res) => {
           )
           .join("")}
     </ul>`);
+  }, 2000);
 });
 
 app.listen(PORT, () => {
