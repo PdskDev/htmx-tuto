@@ -17,7 +17,11 @@
   "author": "NadetDev",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.19.2",
     "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "api": "file:",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   }
 }
