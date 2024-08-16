@@ -62,7 +62,7 @@ app.post("/users-search", async (req, res) => {
 
   if (!searchTerm) {
     return res.send(`
-      <tr>No result</tr>
+      <tr><td colspan='3' class='text-center'>No result</td></tr>
       `);
   }
 
@@ -87,7 +87,6 @@ app.post("/users-search", async (req, res) => {
          <td>${user.name}</td>
          <td>${user.username}</td>
          <td>${user.email}</td>
-         <td></td>
        </tr>
     `
     )

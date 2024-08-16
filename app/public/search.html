@@ -14,12 +14,12 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="m-3">User search</h1>
+      <h1 class="mt-4 mb-4">User search</h1>
       <div>
         <form>
         <input type="text" name="search" id="search" 
         placeholder="Enter first name, last name or email..." 
-        class="form-control m-4"
+        class="form-control mt-2 mb-3"
         hx-trigger="input changed delay:200ms, search"
         hx-post="/users-search"
         hx-target="#search-result"
@@ -27,10 +27,10 @@
       </form>
       </div>
       <div>
-        <table class="table">
+        <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Full Name</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
             </tr>
